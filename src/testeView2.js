@@ -18,19 +18,22 @@ import {
 import { TextInput } from 'react-native-paper';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTeste1, setTeste2, setTeste3, setTeste4, resetTeste} from '../redux/contadorSlice';
+import { render } from '@testing-library/react-native';
 
 const TesteView2 = ({navigation}) => {
     const dispatch = useDispatch();
     const testes = useSelector(state => state.contador);
-
+    
     function testeSave() {
 
-        var json = "{ ";
-        json += "teste1: " + testes.teste1 + "; ";
-        json += "teste2: " + testes.teste2 + "; ";
-        json += "teste3: " + testes.teste3 + "; ";
-        json += "teste4: " + testes.teste4 + "";
-        json += "}"
+        if (testes.teste1 != '' || testes.teste2 != '' || testes.teste3 != '' || testes.teste4 != '') {
+            var json = "{ ";
+            json += "teste1: " + testes.teste1 + "; ";
+            json += "teste2: " + testes.teste2 + "; ";
+            json += "teste3: " + testes.teste3 + "; ";
+            json += "teste4: " + testes.teste4 + "";
+            json += "}"
+        }
 
         console.log('testeJson: ' + json)
     }

@@ -1,11 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import { StatusBar, StyleSheet, useColorScheme, View, Text } from 'react-native';
+import { StyleSheet, useColorScheme } from 'react-native';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import ContadorRedux from './src/contadorRedux';
