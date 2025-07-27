@@ -5,17 +5,30 @@
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import { StatusBar, StyleSheet, useColorScheme, View, Text } from 'react-native';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+import ContadorRedux from './src/contadorRedux';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { DarkTheme, NavigationContainer } from '@react-navigation/native';
+import TesteView1 from './src/testeView1';
+import TesteView2 from './src/testeView2';
+
+const Stack = createNativeStackNavigator();
 
 function App() {
+  
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <Provider store={store}>
+      <NavigationContainer theme={DarkTheme}>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="testeView1" component={TesteView1}/>
+          <Stack.Screen name="testeView2" component={TesteView2}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
 
