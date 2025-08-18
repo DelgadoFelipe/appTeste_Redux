@@ -18,7 +18,7 @@ import {
 import { TextInput } from 'react-native-paper';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetTeste, setTeste1, setTeste2, setTeste3, setTeste4, } from '../redux/contadorSlice';
-import { ListUsers } from './Components/usersList';
+import { UsersList } from './Components/usersList';
 
 
 const TesteView1 = ({navigation}) => {
@@ -27,7 +27,7 @@ const TesteView1 = ({navigation}) => {
     return (
         <View style={Styles.areaScreenTeste}>
             
-            <ListUsers />
+            <UsersList />
 
             <TextInput
                 mode="outlined" 
@@ -43,7 +43,6 @@ const TesteView1 = ({navigation}) => {
             <TextInput
                 mode="outlined" 
                 label="teste2"
-                autoFocus
                 style={Styles.inputLogin}
                 left={<TextInput.Icon icon="account"/>}
                 value={useSelector(state => state.contador.teste2)}

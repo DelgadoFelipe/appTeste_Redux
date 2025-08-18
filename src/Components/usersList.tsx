@@ -21,7 +21,7 @@ export const UsersList = () => {
 
     if (loading) {
         return(
-            <Text>Carregando</Text>
+            <Text>Carregando...</Text>
         )
     }
     else {

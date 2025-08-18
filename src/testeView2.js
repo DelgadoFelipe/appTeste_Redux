@@ -54,7 +54,6 @@ const TesteView2 = ({navigation}) => {
             <TextInput
                 mode="outlined" 
                 label="teste4"
-                autoFocus
                 style={Styles.inputLogin}
                 left={<TextInput.Icon icon="account"/>}
                 value={useSelector(state => state.contador.teste4)}

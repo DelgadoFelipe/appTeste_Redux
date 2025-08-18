@@ -10,3 +10,11 @@ describe("Welcome component", () => {
     })
 })
 
+describe("Welcome component2", () => {
+    it("teste renderização 2", () => {
+        const {getByText} = render(<Welcome name="Maria"/>);
+
+        expect(getByText("Bem vindo, Maria!")).toBeTruthy();
+    })
+})
+

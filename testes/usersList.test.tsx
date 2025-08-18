@@ -21,10 +21,10 @@ describe("UsersList", () => {
 
         const {getByText, queryByText} = render(<UsersList />);
 
-        expect(getByText("Carregando")).toBeTruthy()
+        expect(getByText("Carregando...")).toBeTruthy()
 
         await waitFor(() => {
-            expect(queryByText("Carregando")).toBeNull();
+            expect(queryByText("Carregando...")).toBeNull();
             expect(getByText("João")).toBeTruthy();
             expect(getByText("Maria")).toBeTruthy;
         })
