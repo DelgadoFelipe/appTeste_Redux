@@ -7,6 +7,7 @@ import { DarkTheme, NavigationContainer } from '@react-navigation/native';
 import TesteView1 from './src/testeView1';
 import TesteView2 from './src/testeView2';
 import LoginView from './src/loginView';
+import HomeView from './src/homeView';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ function App() {
           {/* <Stack.Screen name="testeView1" component={TesteView1}/> */}
           {/* <Stack.Screen name="testeView2" component={TesteView2}/> */}
           <Stack.Screen name="loginView" component={LoginView} />
+          <Stack.Screen name="homeView" component={HomeView} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
